@@ -8,14 +8,16 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-
+  const [users,setUsers] = useState([]);
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.get("http://127.0.0.1:8000/customer/Customer/");
+      console.log(response);
       const users = response.data;
-      
+      console.log(users);
+
       // Check if the user exists with matching email and password
       const user = users.find(u => u.email === email && u.password === password); // Assuming the password is stored in plain text for now
 
