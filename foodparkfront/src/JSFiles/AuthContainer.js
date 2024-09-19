@@ -12,20 +12,6 @@ const AuthContainer = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isSignUp, setIsSignUp] = useState(false); // Toggle between Sign In and Sign Up
   const slides = [c1, c2, c3];
-  const [user, setUser] = useState([]);
-  
-  useEffect(() => {
-    async function getAllUser() {
-      try {
-        const user = await axios.get("http://127.0.0.1:8000/customer/Customer/");
-        console.log(user.data);
-        setUser(user.data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getAllUser();
-  }, []);
   
   useEffect(() => {
     const interval = setInterval(() => {
