@@ -23,11 +23,11 @@ const LoginForm = () => {
         // Store the user in localStorage
         localStorage.setItem('user', JSON.stringify(user));
         setError(null);
-        toast('Login successful!');
+        toast.success('Login successful!');
         // Redirect or update the UI as needed
         window.location.href = '/'; // Redirect to home or another page
       } else {
-        setError('Invalid email or password');
+        toast.error('Invalid email or password');
       }
     } catch (err) {
       setError('An error occurred during login');
