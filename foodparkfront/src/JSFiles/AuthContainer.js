@@ -12,7 +12,7 @@ const AuthContainer = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isSignUp, setIsSignUp] = useState(false); // Toggle between Sign In and Sign Up
   const slides = [c1, c2, c3];
-  
+  const user =  localStorage.getItem('user');
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -97,9 +97,6 @@ const AuthContainer = () => {
               <a href="/" className="underline font-bold">
                 Skip for now
               </a>
-              {user.map((item, i) => (
-                <p key={i}>{item.c_fname}</p>
-              ))}
             </div>
           </div>
         </div>
